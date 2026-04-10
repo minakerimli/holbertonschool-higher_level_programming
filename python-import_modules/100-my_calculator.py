@@ -3,17 +3,17 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
-    # Check the number of arguments (Script + 3 args = 4)
+    # Check if the number of arguments is exactly 3 (total 4 with script name)
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    # Assign and cast variables
+    # Casting arguments and identifying operator
     a = int(sys.argv[1])
     op = sys.argv[2]
     b = int(sys.argv[3])
 
-    # Handle operations based on the operator string
+    # Comparison logic for operators
     if op == "+":
         result = add(a, b)
     elif op == "-":
@@ -23,9 +23,9 @@ if __name__ == "__main__":
     elif op == "/":
         result = div(a, b)
     else:
-        # Error message if the operator is not recognized
+        # Exact error message required by the task
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    # Print the result in the format: <a> <operator> <b> = <result>
+    # Formatted output
     print("{} {} {} = {}".format(a, op, b, result))
