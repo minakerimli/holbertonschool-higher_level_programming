@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 This module defines a Square class.
-It supports area calculation and rich comparison operators
-based on the area of the squares.
+It includes size validation and provides functionality to compare
+different Square instances based on their calculated area.
 """
 
 
@@ -19,7 +19,7 @@ class Square:
         Initializes a new Square instance.
 
         Args:
-            size (number): The size of the square.
+            size (number): The size of the square's sides.
         """
         self.size = size
 
@@ -48,7 +48,7 @@ class Square:
 
     def area(self):
         """
-        Calculates the area of the square.
+        Calculates the current square area.
 
         Returns:
             The area of the square.
@@ -56,25 +56,25 @@ class Square:
         return self.__size ** 2
 
     def __eq__(self, other):
-        """Compare if two squares are equal in area."""
+        """Check if two squares have equal areas."""
         return self.area() == other.area()
 
     def __ne__(self, other):
-        """Compare if two squares are not equal in area."""
+        """Check if two squares have unequal areas."""
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """Compare if one square is less than another in area."""
+        """Check if one square's area is less than another's."""
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Compare if one square is less than or equal to another in area."""
+        """Check if one square's area is less than or equal to another's."""
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """Compare if one square is greater than another in area."""
+        """Check if one square's area is greater than another's."""
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Compare if one square is greater than or equal to another in area."""
+        """Check if one square's area is greater than or equal to another's."""
         return self.area() >= other.area()
