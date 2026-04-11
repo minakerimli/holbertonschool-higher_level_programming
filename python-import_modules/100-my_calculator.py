@@ -5,23 +5,24 @@ from calculator_1 import add, sub, mul, div
 
 def main():
     """
-    Handles basic arithmetic operations based on command-line arguments.
+    Import all functions from calculator_1 and perform basic operations.
 
-    The function checks for the correct number of arguments, validates
-    the operator, performs the calculation using imported functions,
-    and prints the result in the format: <a> <operator> <b> = <result>.
+    The program handles addition, subtraction, multiplication, and division
+    based on command-line arguments. It validates the number of arguments
+    and the operator type before execution.
     """
-    # Check the number of arguments (script name + 3 arguments = 4)
-    if len(sys.argv) != 4:
+    # Number of arguments must be exactly 3 (excluding the script name)
+    n_args = len(sys.argv) - 1
+    if n_args != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    # Cast arguments to integers
+    # Assigning arguments to variables
     a = int(sys.argv[1])
     operator = sys.argv[2]
     b = int(sys.argv[3])
 
-    # Map operators to their respective functions from calculator_1
+    # Mapping operators to the imported functions
     ops = {
         "+": add,
         "-": sub,
@@ -29,12 +30,12 @@ def main():
         "/": div
     }
 
-    # Validate if the operator exists in our dictionary
+    # Validate if the operator is supported
     if operator not in ops:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    # Perform the operation and print the result
+    # Calculate and print result
     result = ops[operator](a, b)
     print("{} {} {} = {}".format(a, operator, b, result))
 
