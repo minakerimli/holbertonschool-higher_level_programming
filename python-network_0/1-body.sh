@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends GET request and displays response body
-printf "%s" "$(curl -s "$1")"
+# Sends GET request and follows redirects, displaying only the response body
+curl -sL "$1"
