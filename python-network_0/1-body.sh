@@ -1,3 +1,3 @@
 #!/bin/bash
-# Script that sends a GET request and displays body only if response is 200
-curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q 200 && curl -s "$1"
+# Sends GET request and displays body only if response code is 200
+resp=$(curl -s -w "%{http_code}" "$1"); code=${resp: -3}; [ "$code" -eq 200 ] && echo "${resp%???}"
