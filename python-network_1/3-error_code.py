@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Sends a request to a URL and handles HTTP errors by printing the status code."""
+"""Send request and handle HTTP errors by printing status code."""
 
 import sys
 import urllib.request
